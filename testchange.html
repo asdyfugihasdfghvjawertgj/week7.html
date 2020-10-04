@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testchange</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="js/jquery.min.js"></script>
+</head>
+<body>
+<form id="register">
+<input type="text" name="username " id="username">username
+<input type="text" name="password">password
+<input type="radio" name="gender" value="male">male
+<input type="radio" name="gender" value="female">female
+
+<select id="city">
+	<option value="mdy">mdy</option>
+	<option value="ygn">Ygn</option>
+	<option value="tgn">Tgn</option>
+</select>
+<button id="submit">submit</button>
+<div id="mydiv" style="border: 2px solid green; width:200px; height: 200px" >
+	this is div
+</div>
+</form>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#submit").click(function(){
+			var gender=$('input[name="gender"]:checked').val();
+			alert(`gender is ${gender}`);
+		})
+		$('input[name="gender"]').change(function(){
+		var gender=$('input[name="gender"]:checked').val();
+			alert(`gender is ${gender}`);	
+		})
+		$("#city").change(function(){
+			var city=$("#city").val();
+			alert(`city is ${city}`);
+		})
+		$("#username").change(function(){
+			var name=$("#username").val();
+			alert(`name is ${name}`);
+		})
+		$("#register").submit(function(event){
+			alert("username is" +$("#username").val());
+			event.preventDefault();
+		})
+		$("#mydiv").append("<p>this is paragraph</p>");
+		$("#mydiv").prepend("<p>this is prepand</p>");
+		$("#mydiv").before("<p>this is bdfore</p>");
+		$("#mydiv").after("<p>this is after</p>");
+		$("form").find("button").css("background-color","red");
+		$("form").find($("input")[0]).css("background-color","red");
+		$("form").find($("input:first")).css("background-color","red");
+		$("form").find($("input:nth-child(2)")).css("background-color","red");
+	})
+</script>
+</body>
+</html>

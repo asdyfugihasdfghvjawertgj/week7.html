@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>showhide</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="div1">
+	div1
+</div>
+<div id="div2">
+	div2
+</div>
+<div id="div3">
+	div3
+</div>
+<input type="button" name="show" id="show" value="show">
+<input type="button" name="hide" id="hide" value="hide">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#div1").hide();
+		$("#div2").hide();
+		$("#div3").hide();
+		$("#show").click(function(){
+		$("#div1").show("fast");
+		$("#div3").show("slow");	
+		$("#div2").show("3000000");	
+		})
+		$("#hide").click(function(){
+		$("#div1").hide();
+		$("#div3").hide();	
+		})
+
+	})
+</script>
+</body>
+</html>

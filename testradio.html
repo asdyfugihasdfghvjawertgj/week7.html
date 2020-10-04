@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="js/jquery.min.js"></script>
+<style>
+	#mdy{
+		display: none;
+		left: 10px;
+	}
+
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="1.jpg" id="mdy" alt="Snow" style="width:100%;">
+</div>
+<select id="speed_rate">
+	<option value="400">400ms</option>
+	<option value="1000">1000ms</option>
+	<option value="5000">5000ms</option>
+</select>
+<input type="radio" name="speed" value="slow" checked>slow
+<input type="radio" name="speed" value="normal" checked>normal
+<input type="radio" name="speed" value="fast" checked>fast
+<button id="mybutton">add</button>
+<script>
+    $(document).ready(function(){
+    	$("#mybutton").click(function(){
+    		var speed=$('input[name="speed"]:checked').val();
+    		console.log(speed);
+    		var speed_rate=$("#speed_rate").val();
+    		console.log(parseInt(speed_rate));
+      	if (speed=="slow") {
+      		$("#mdy").animate({
+      			opacity : 0.2,
+      			left:"+=50",
+      			height:"toggle"
+
+      		}
+      		,2000,function(){
+      			alert("thi sid ghjk")
+      		})
+      	}
+      	else if (speed=="normal") {
+
+      		$("#mdy").animate({
+      			opacity : '0.2',
+      			left:"+=50",
+      			height:"toggle"
+
+      		}
+      		,500,function(){
+      			alert("thi sid ghjk")
+      		})	
+      	}
+    	})
+     
+      
+      }) 
+</script>
+</body>
+</html> 

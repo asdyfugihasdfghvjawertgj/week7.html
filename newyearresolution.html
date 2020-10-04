@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="todolist">
+    </ul>
+
+    
+    <input type="date" value="date" id="date">
+    <input type="text" id="txt" >
+    <input type="submit" name="submit" id="submit">
+    <ul id="mission">
+    </ul>
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                var newdate=$("#date").val();
+                var newtodolist=$("#txt").val();
+                //$("#todolist").prepend( "<li>"+aa+newdate +"&nbsp &nbsp"+  newtodolist+ "</li>");
+                $("#todolist").prepend( '<input type="checkbox" id="check">'+newdate +"&nbsp &nbsp"+  newtodolist);
+              $("#txt");
+              $("input:checkbox").click(function () {
+                  console.log("hello");
+                  $(this).prop("checked",false);
+                  var before=$(this).parent();
+                  $(this).parent().remove();
+            // $($("#todolist").prepend( "<li>"+'<input type="checkbox" id="check">'+newdate +"&nbsp &nbsp"+  newtodolist+ "</li>")).remove();
+           $("#mission").append(before);
+
+        });
+
+            })
+        })
+    </script>
+</body>
+</html>

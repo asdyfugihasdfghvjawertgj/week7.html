@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testquery</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="mydiv1">
+asd
+<p id="p1">this is paragraph</p>	
+</div>
+<div id="mydiv">
+asd
+<p>this is paragraph</p>	
+</div>
+<div id="mydiv">
+asd	
+<p>this is paragraph</p>
+</div>
+<input type="button" id="mybutton" name="submit" value="submit">
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#mybutton").click(function(){
+	$("#mydiv").css("background-color","blue");
+	$("div").css("color","white");
+	$("div p").css("background-color","red");
+	$("p").eq(1).css("background-color","orange");
+	$("div:nth-child(1)").css("background-color","orange");
+	$("div:first").css("background-color","green");
+	$("div:last").css("background-color","green");
+	$("body div p").css("background-color","red");
+	$("div,#mydiv1,#p1").css("background-color","green");
+})	
+})
+</script>
+</html>

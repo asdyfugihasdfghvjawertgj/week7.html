@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testclass</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style type="text/css">
+		.div1{
+			height: 200px;
+			width: 200px;
+			background-color: orange;
+		}
+		.div2{
+			background-color: blue;
+		}
+		.div3{
+			height: 100px;
+			width: 100px;
+			font-size: 50px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<div id="div1">
+	div1
+</div>
+<div id="div2">
+	div2
+</div>
+<div id="div3">
+	div3
+</div>
+<input type="button" name="add" id="add" value="add">
+<input type="button" name="remove" id="remove" value="remove">
+<input type="button" name="toggle" id="toggle" value="toggle">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#add").click(function(){
+			$("#div1").addClass("div1");
+		})
+		$("#remove").click(function(){
+			$("#div1").removeClass("div1");
+		})
+		$("#toggle").click(function(){
+			$("#div1").toggleClass("div1");
+		})
+		$("#add").mouseover(function(){
+			$("#add").addClass("div2");
+			$("#add").addClass("div3");
+			
+		})
+		$("#remove").mouseover(function(){
+			$("#remove").addClass("div2");
+			$("#remove").addClass("div3");
+			
+		})
+		$("#toggle").mouseover(function(){
+			$("#toggle").addClass("div2");
+			$("#toggle").addClass("div3");
+			
+		})
+		$("#add").mouseout(function(){
+			$("#add").removeClass("div2");
+			$("#add").removeClass("div3");
+			
+		})
+		$("#remove").mouseout(function(){
+			$("#remove").removeClass("div2");
+			$("#remove").removeClass("div3");
+			
+		})
+		$("#toggle").mouseout(function(){
+			$("#toggle").removeClass("div2");
+			$("#toggle").removeClass("div3");
+			
+		})
+	})
+</script>
+</body>
+</html>

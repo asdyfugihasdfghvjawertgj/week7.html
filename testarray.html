@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testchange</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="js/jquery.min.js"></script>
+</head>
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$("ul li").each(function(){
+		$(this).css("color","red");
+	})
+
+	$("ul li").each(function(){
+		$(this).append("<span>this is item</span>")
+	});
+	var items=$("li");
+	var arayitems=$.makeArray(items);
+	arayitems.reverse();
+	$("ul").html(arayitems);
+	console.log($.isArray(items));
+	console.log($.isArray(arayitems));
+	var name=["hla","mya","su","su"];
+	console.log($.inArray("su",name));
+	console.log($.unique(name));	
+	})
+</script>
+</body>
+</html>

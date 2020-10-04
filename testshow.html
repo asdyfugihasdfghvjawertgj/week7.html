@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JQuery</title>
+        <meta charset="UTF-8">
+        <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+        <script src="js/jquery.min.js"></script>
+        <style>
+            .div1{
+                background-color: lightblue;
+            }
+            .div2{
+                background-color: red;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="gg">Test</div>
+        <div id="jj">
+            <p>Hello Every one</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error expedita, excepturi fuga nostrum eum quia accusamus eos maiores debitis architecto fugit similique minus, labore dolorem enim, dignissimos omnis voluptas deleniti!
+            </p>
+        </div>
+        <div id="ee">Test</div>
+        <button id="mybutton1" type="button">ADD</button>
+        <button id="mybutton" type="button">Submit</button>
+        <script>
+            $(document).ready(function(){
+                $("#jj").hide();
+                $("#ee").hide();
+                $("#gg").hide();
+                $("#mybutton1").click(function(){
+                    $("#gg").show(10000);
+               
+                })
+            })
+        </script>
+    </body>
+</html>

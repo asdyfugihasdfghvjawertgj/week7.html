@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>testing select</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input type="number" id="input1">
+        <select id="dropdown1">
+            <option value="USD">USD</option>
+            <option value="SGD">SGD</option>
+            <option value="MMK">MMK</option>
+            <option value="JPY">JPY</option>
+        </select>
+        <input type="number" id="input2">
+        <select id="dropdown2">
+            <option value="USD">USD</option>
+            <option value="SGD">SGD</option>
+            <option value="MMK">MMK</option>
+            <option value="JPY">JPY</option>
+        </select>
+        <script>
+            $(document).ready(function(){
+                $("#input1").on("input",function(){ // like event listener
+                    var exc1 = $("#dropdown1").val();  //get value form first dropdown box like USD, SGD ...
+                    var exc2 = $("#dropdown2").val();  //get value form second dropdown box like USD, SGD ...
+                    var num1 = $(this).val();           //get number from first input
+                    //united state dollar to other 
+                    if(exc1=="USD" && exc2=="USD"){
+                        $("#input2").val(num1);
+                    }
+                    else if(exc1=="USD" && exc2=="SGD"){
+                        var result;
+                        result = num1 * 1.36;
+                        $("#input2").val(result);
+                    }
+                    else if(exc1=="USD" && exc2=="MMK"){
+                        var result;
+                        result = num1 * 1303;
+                        $("#input2").val(result);
+                    }
+                    else if(exc1=="USD" && exc2=="JPY"){
+                        var result;
+                        result = num1 * 105;
+                        $("#input2").val(result);
+                    }
+                    //singapore dollar to other 
+                    else if (exc1=="SGD" && exc2=="USD"){
+                        var result;
+                        result = num1*0.73;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="SGD" && exc2=="SGD"){
+                        var result;
+                        result = num1*1;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="SGD" && exc2=="MMK"){
+                        var result;
+                        result = num1*955;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="SGD" && exc2=="JPY"){
+                        var result;
+                        result = num1*77;
+                        $("#input2").val(result);
+                    }
+                    //myanmar kyats to other 
+                    else if (exc1=="MMK" && exc2=="USD"){
+                        var result;
+                        result = num1*0.00077;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="MMK" && exc2=="SGD"){
+                        var result;
+                        result = num1*0.0010;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="MMK" && exc2=="MMK"){
+                        var result;
+                        result = num1*1;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="MMK" && exc2=="JPY"){
+                        var result;
+                        result = num1*0.081;
+                        $("#input2").val(result);
+                    }
+                    //japanese yen to other
+                    else if (exc1=="JPY" && exc2=="USD"){
+                        var result;
+                        result = num1*0.0095;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="JPY" && exc2=="SGD"){
+                        var result;
+                        result = num1*0.013;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="JPY" && exc2=="MMK"){
+                        var result;
+                        result = num1*12.38;
+                        $("#input2").val(result);
+                    }
+                    else if (exc1=="JPY" && exc2=="JPY"){
+                        var result;
+                        result = num1*1;
+                        $("#input2").val(result);
+                    }
+
+
+
+
+            });
+            $("#input2").on("input",function(){ // like event listener
+                    var exc1 = $("#dropdown1").val();  //get value form first dropdown box like USD, SGD ...
+                    var exc2 = $("#dropdown2").val();  //get value form second dropdown box like USD, SGD ...
+                    var num2 = $(this).val();           //get number from first input
+                    //united state dollar to other 
+                    if(exc1=="USD" && exc2=="USD"){
+                        $("#input1").val(num2);
+                    }
+                    else if(exc1=="USD" && exc2=="SGD"){
+                        var result;
+                        result = num2 / 1.36;
+                        $("#input1").val(result);
+                    }
+                    else if(exc1=="USD" && exc2=="MMK"){
+                        var result;
+                        result = num2 / 1303;
+                        $("#input1").val(result);
+                    }
+                    else if(exc1=="USD" && exc2=="JPY"){
+                        var result;
+                        result = num2 / 105;
+                        $("#input1").val(result);
+                    }
+                    //singapore dollar to other 
+                    else if (exc1=="SGD" && exc2=="USD"){
+                        var result;
+                        result = num2/0.73;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="SGD" && exc2=="SGD"){
+                        var result;
+                        result = num2*1;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="SGD" && exc2=="MMK"){
+                        var result;
+                        result = num2/955;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="SGD" && exc2=="JPY"){
+                        var result;
+                        result = num2/77;
+                        $("#input1").val(result);
+                    }
+                    //myanmar kyats to other 
+                    else if (exc1=="MMK" && exc2=="USD"){
+                        var result;
+                        result = num2/0.00077;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="MMK" && exc2=="SGD"){
+                        var result;
+                        result = num2/0.0010;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="MMK" && exc2=="MMK"){
+                        var result;
+                        result = num2*1;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="MMK" && exc2=="JPY"){
+                        var result;
+                        result = num2/0.081;
+                        $("#input1").val(result);
+                    }
+                    //japanese yen to other
+                    else if (exc1=="JPY" && exc2=="USD"){
+                        var result;
+                        result = num2/0.0095;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="JPY" && exc2=="SGD"){
+                        var result;
+                        result = num2/0.013;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="JPY" && exc2=="MMK"){
+                        var result;
+                        result = num2/12.38;
+                        $("#input1").val(result);
+                    }
+                    else if (exc1=="JPY" && exc2=="JPY"){
+                        var result;
+                        result = num2*1;
+                        $("#input1").val(result);
+                    }   
+            });
+        });
+        </script>
+    </body>
+</html>

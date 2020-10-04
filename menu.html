@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css ">
+
+<style>
+.menu{
+    border-radius:5px;
+   
+}
+.menu ul {
+    margin: 0; 
+    padding: 0;
+    width:185px;
+    list-style-type: none;
+    
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #fff; 
+    padding: 10px 11px;
+    background-color: #8E5874;
+    display:block;
+    border-bottom:solid 1px #000;
+}
+.menu ul li a:visited {
+    color: white;
+}
+.menu ul li a:hover {
+    color: #000;
+    background-color: #B1C7D6;
+}
+
+
+</style>
+</head>
+
+<body>
+<h1>jQuery fadeIn </h1>
+
+<i class="fas fa-align-justify" id="icon"></i>
+    <div class="menu">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Activities</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+<div id="div1"></div>
+<p>
+<button class="fademet">Run FadeIn</button>
+</p>
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+      $("#icon").click(function(){
+         $("li").toggle();
+   });
+
+    })
+</script>
+</body>
+</html>
